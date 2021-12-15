@@ -8,7 +8,7 @@ import member
 import helps
 import crypto
 #import music
-import welcome
+#import welcome
 import spotify
 import moderation
 import messages
@@ -39,7 +39,7 @@ except ImportError:
 
 #keep_alive()
 
-cogs = [heistbot, member, helps, crypto, welcome, spotify, moderation, messages] #importing modules
+cogs = [heistbot, member, helps, crypto, spotify, moderation, messages] #importing modules
 intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix = PREFIX, description ="Online ako kili-kili!", intents = intents)
