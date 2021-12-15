@@ -2,6 +2,6 @@ discord.py
 python-dotenv
 discord-py-slash-command
 requests
-os
+os 3.9.1
 googletrans
 youtube_dl
