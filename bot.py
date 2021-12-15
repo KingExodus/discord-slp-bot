@@ -3,7 +3,7 @@ from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.members = True
-bot = commands.Bot(command_prefix = PREFIX, description ="Online ako kili-kili!", intents = intents)
+bot = commands.Bot(command_prefix = "!", description ="Online ako kili-kili!", intents = intents)
 bot.remove_command('help')
 
 @bot.event
