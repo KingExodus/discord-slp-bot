@@ -30,4 +30,4 @@ async def test(ctx):
   await ctx.send(embed = embed)
 
 
-bot.run(os.getenv(DISCORD_TOKEN), bot=True, reconnect=True)
+bot.run(os.getenv('DISCORD_TOKEN'), bot=True, reconnect=True)
