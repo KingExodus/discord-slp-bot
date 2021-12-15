@@ -1,4 +1,4 @@
-TOKEN = "OTIwMjIwMDY2NjE4OTQ5Njgy.YbhLuA.R7HFm2BrCj7v4qvc8z3CTbVRM_8"
+DISCORD_TOKEN = "OTIwMjIwMDY2NjE4OTQ5Njgy.YbhLuA.R7HFm2BrCj7v4qvc8z3CTbVRM_8"
 PREFIX = "!"
 
 firebase_authkey = {

@@ -74,4 +74,4 @@ async def test(ctx):
 
 
 #keep_alive()
-bot.run(TOKEN, bot=True, reconnect=True)
+bot.run(DISCORD_TOKEN, bot=True, reconnect=True)
