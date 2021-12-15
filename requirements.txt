@@ -2,7 +2,3 @@ discord.py
 python-dotenv
 discord-py-slash-command
 requests
-json
-datetime
-time
-typing
