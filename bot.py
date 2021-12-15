@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from config import *
-from keep_alive import keep_alive
+#from keep_alive import keep_alive
 
 import heistbot
 import member
@@ -72,5 +72,5 @@ async def test(ctx):
   await ctx.send(embed = embed)
 
 
-keep_alive()
+#keep_alive()
 bot.run(TOKEN, bot=True, reconnect=True)
