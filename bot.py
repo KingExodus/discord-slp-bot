@@ -1,33 +1,13 @@
 import discord
-import os
 from discord.ext import commands
+from discord_slash import SlashCommand, SlashContext
 
-intents = discord.Intents.default()
-intents.members = True
-bot = commands.Bot(command_prefix = "!", description ="Online ako kili-kili!", intents = intents)
-bot.remove_command('help')
+bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
+slash = SlashCommand(bot)
 
-@bot.event
-async def on_ready():
-  print("I'm alive and logged in as {0.user}".format(bot))
+@slash.slash(name="test")
+async def _test(ctx: SlashContext):
+    embed = discord.Embed(title="embed test")
+    await ctx.send(content="test", embeds=[embed])
 
-#@bot.command(pass_context=True) #firebase write
-#async def firebase(ctx, color: str):
-#  print("Pick a color")
-#  colors = color
-#  user = ctx.message.author.id
-#  ref = db.reference(f"/")
-#  ref.update({
-#    user: {
-#      "Color": str(colors)
-#    }
-#  })
-
-@bot.command()
-async def test(ctx):
-  embed = discord.Message.Embed(title ="Cleared all recent messages")
-  
-  await ctx.send(embed = embed)
-
-
-bot.run('OTIwMjIwMDY2NjE4OTQ5Njgy.YbhLuA.R7HFm2BrCj7v4qvc8z3CTbVRM_8', bot=True, reconnect=True)
+bot.run("OTIwMjIwMDY2NjE4OTQ5Njgy.YbhLuA.R7HFm2BrCj7v4qvc8z3CTbVRM_8")
