@@ -1,17 +1,18 @@
 import discord
 from discord.ext import commands
+import os
 from config import *
 #from keep_alive import keep_alive
 
-import heistbot
-import member
+#import heistbot
+#import member
 import helps
 import crypto
 #import music
 #import welcome
 #import spotify
-import moderation
-import messages
+#import moderation
+#import messages
 
 #import nacl
 import platform
@@ -38,8 +39,8 @@ except ImportError:
     exit()
 
 #keep_alive()
-
-cogs = [heistbot, member, helps, crypto, moderation, messages] #importing modules
+cogs = [helps, crypto]
+#cogs = [heistbot, member, helps, crypto, moderation, messages] #importing modules
 intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix = PREFIX, description ="Online ako kili-kili!", intents = intents)
