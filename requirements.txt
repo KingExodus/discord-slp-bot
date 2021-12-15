@@ -3,6 +3,5 @@ python-dotenv
 discord-py-slash-command
 requests
 googletrans
-dateutil
 PIL
 youtube_dl
