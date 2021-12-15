@@ -1,4 +1,4 @@
-TOKEN = "ODkzNTIzMDg1MzQzNDYxMzg3.YVcsOA.uO88gjE2kgw52GS8_MgTVuUYQ24"
+TOKEN = "OTIwMjIwMDY2NjE4OTQ5Njgy.YbhLuA.R7HFm2BrCj7v4qvc8z3CTbVRM_8"
 PREFIX = "!"
 
 firebase_authkey = {
