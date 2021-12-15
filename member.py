@@ -9,10 +9,10 @@ import random
 #from firebase_admin import credentials
 #from firebase_admin import db
 
-cred = credentials.Certificate(firebase_authkey)
-databaseApp = firebase_admin.initialize_app(cred, {
-  'databaseURL': database_url
-})
+#cred = credentials.Certificate(firebase_authkey)
+#databaseApp = firebase_admin.initialize_app(cred, {
+#  'databaseURL': database_url
+#})
 
 default = discord.Color.green()
 
