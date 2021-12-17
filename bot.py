@@ -40,8 +40,10 @@ async def on_ready():
     #title = f'{symbol.upper()}'
     #description = f'{name}'
     #➘ ➚ ⤴ ⤵ ⇗ ⇘ ↘ ↗
-  
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price} (₱{php})"))
+    
+    tagname = "SLP ⤴"
+    await bot.user.edit(username=f"SLP ⤵ ₱{php}")
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price}"))
         
 
   #Playing
