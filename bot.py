@@ -42,9 +42,9 @@ async def on_ready():
     #➘ ➚ ⤴ ⤵ ⇗ ⇘ ↘ ↗
     
     #tagname = f"{0.user}".format(bot)
-    
+    bot.user.setUsername("MyNewUsername");
     await bot.change_presence(activity=discord.Game(name=f"{symbol.upper()} ${price}"))
-    await bot.user.edit(username=bot.user)
+    
     #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price}"))
         
 
