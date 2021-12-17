@@ -34,15 +34,15 @@ async def on_ready():
             "https://api.coingecko.com/api/v3/simple/price?ids={}&vs_currencies=php,usd"
             .format(all_tokens_json[index]["id"]))
     response_json = response.json()
-    price = "{:,.8f}".format(response_json[id]["usd"]).rstrip("0").rstrip(".")
-    php = "{:,.8f}".format(response_json[id]["php"]).rstrip("0").rstrip(".")
+    price = "{:,.2f}".format(response_json[id]["usd"]).rstrip("0").rstrip(".")
+    php = "{:,.2f}".format(response_json[id]["php"]).rstrip("0").rstrip(".")
             
     #title = f'{symbol.upper()}'
     #description = f'{name}'
     #➘ ➚ ⤴ ⤵ ⇗ ⇘ ↘ ↗
     
     tagname = "{0.user}".format(bot)
-    bot.user.edit(username=tagname)
+    await bot.user.edit(username=tagname)
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price}"))
         
 
