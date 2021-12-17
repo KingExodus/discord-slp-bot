@@ -41,9 +41,11 @@ async def on_ready():
     #description = f'{name}'
     #➘ ➚ ⤴ ⤵ ⇗ ⇘ ↘ ↗
     
-    tagname = "{0.user}".format(bot)
-    await bot.user.edit(username=tagname)
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price}"))
+    tagname = f"{0.user}".format(bot)
+    
+    await bot.change_presence(activity=discord.Game(name=f"{symbol.upper()} ${price}"))
+    await bot.user.edit(username=bot.user)
+    #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price}"))
         
 
   #Playing
