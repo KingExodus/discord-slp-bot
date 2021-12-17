@@ -41,7 +41,7 @@ async def on_ready():
     #description = f'{name}'
     #➘ ➚ ⤴ ⤵ ⇗ ⇘ ↘ ↗
     
-    tagname = f"{0.user}".format(bot)
+    #tagname = f"{0.user}".format(bot)
     
     await bot.change_presence(activity=discord.Game(name=f"{symbol.upper()} ${price}"))
     await bot.user.edit(username=bot.user)
