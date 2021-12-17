@@ -9,6 +9,7 @@ from config import *
 
 import requests
 import json
+import asyncio
 
 bot = commands.Bot(command_prefix=PREFIX)
 guild_ids = [832750290767708170]
