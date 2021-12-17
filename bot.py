@@ -42,7 +42,7 @@ async def on_ready():
     #➘ ➚ ⤴ ⤵ ⇗ ⇘ ↘ ↗
     
     tagname = "{0.user}".format(bot)
-    await bot.user.edit(username=tagname)
+    bot.user.edit(username=tagname)
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price}"))
         
 
