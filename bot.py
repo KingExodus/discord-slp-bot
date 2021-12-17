@@ -21,8 +21,7 @@ slash=SlashCommand(bot, sync_commands=True)
 all_tokens = requests.get("https://api.coingecko.com/api/v3/coins/list")
 all_tokens_json = all_tokens.json()
 
-@bot.event
-async def on_ready(): 
+async def status_update():
   symbol = "slp" #ctx.message.content.lower().split()[1]
   index = next((i for i, item in enumerate(all_tokens_json) 
   if item["symbol"] == symbol), None)
@@ -36,29 +35,31 @@ async def on_ready():
     response_json = response.json()
     price = "{:,.2f}".format(response_json[id]["usd"]).rstrip("0").rstrip(".")
     php = "{:,.2f}".format(response_json[id]["php"]).rstrip("0").rstrip(".")
-            
+    #await bot.change_presence(activity=discord.Game(name=f"{symbol.upper()} ${price}"))
     #title = f'{symbol.upper()}'
     #description = f'{name}'
     #➘ ➚ ⤴ ⤵ ⇗ ⇘ ↘ ↗
-    
-    #tagname = f"{0.user}".format(bot)
-    bot.user.setUsername("MyNewUsername");
-    await bot.change_presence(activity=discord.Game(name=f"{symbol.upper()} ${price}"))
-    
-    #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{symbol.upper()} ${price}"))
-        
 
-  #Playing
-  #await bot.change_presence(activity=discord.Game(name=f"in 1000 servers")) #{len(bot.guilds)}
-  #Streaming
-  #await bot.change_presence(activity=discord.Streaming(name=f"My Stream", url=twitch_url))
-  #Listening
-  #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="a song"))
-  #Watching
-  #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="a movie"))
+    while True:
+        prices = "SLP " + str(price)
+        await bot.user.edit(username=prices)
+        await asyncio.sleep (2)
 
-  #await bot.edit(nick="testthing")
-  print("I'm alive and logged in as {0.user}".format(bot))
+@bot.event
+async def on_ready():
+    print("I'm alive and logged in as {0.user}".format(bot))
+    
+    #Playing
+    #await bot.change_presence(activity=discord.Game(name=f"in 1000 servers")) #{len(bot.guilds)}
+    #Streaming
+    #await bot.change_presence(activity=discord.Streaming(name=f"My Stream", url=twitch_url))
+    #Listening
+    #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="a song"))
+    #Watching
+    #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="a movie"))
+
+    bot.loop.create_task(status_update())
+    
 
 @bot.event # This event runs whenever a user updates: status, game playing, avatar, nickname or role
 async def on_member_update(before, after): 
